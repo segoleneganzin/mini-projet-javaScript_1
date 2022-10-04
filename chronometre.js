@@ -1,51 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+let chrono = document.getElementById("chrono"),
+    resetBtn = document.getElementById("reset"),
+    stopBtn = document.getElementById("stop"),
+    startBtn = document.getElementById("start"),
+    heures = 0,
+    minutes = 0,
+    secondes = 0,
+    millisecondes = 0,
+    timeout,
+    estArrete = true;
 
-    <title>Chronomètre</title>
-  </head>
-  <body>
-    <div>
-      <div id="chrono">00:00:00:00</div>
-      <div id="buttons">
-        <button id="reset" class="button">Reset</button>
-        <button id="stop" class="button">Arrêter</button>
-        <button id="start" class="button">Démarrer</button>
-      </div>
-    </div>
-  
-<script>
-
-let chrono = document.getElementById("chrono");
-let resetBtn = document.getElementById("reset");
-let stopBtn = document.getElementById("stop");
-let startBtn = document.getElementById("start");
-
-let heures = 0;
-let minutes = 0;
-let secondes = 0;
-let millisecondes = 0;
-
-let timeout;
-
-let estArrete = true;
-
-const demarrer = () => {
+function demarrer () {
   if (estArrete) {
     estArrete = false;
     defilerTemps();
   }
 };
 
-const arreter = () => {
+function arreter () {
   if (!estArrete) {
     estArrete = true;
     clearTimeout(timeout);
   }
 };
 
-const defilerTemps = () => {
+function reset() {
+    chrono.textContent = "00:00:00";
+    estArrete = true;
+    heures = 0;
+    minutes = 0;
+    secondes = 0;
+    clearTimeout(timeout);
+  };
+
+function defilerTemps () {
   if (estArrete) return;
 
   millisecondes = parseInt(millisecondes);
@@ -72,6 +59,11 @@ const defilerTemps = () => {
   }
 
   //   affichage
+  if (millisecondes < 10) {
+    millisecondes = "00" + millisecondes;
+    }else if (millisecondes < 100) {
+        millisecondes = "0" + millisecondes;
+        }
   if (secondes < 10) {
     secondes = "0" + secondes;
   }
@@ -89,19 +81,7 @@ const defilerTemps = () => {
   timeout = setTimeout(defilerTemps, 10);
 };
 
-const reset = () => {
-  chrono.textContent = "00:00:00";
-  estArrete = true;
-  heures = 0;
-  minutes = 0;
-  secondes = 0;
-  clearTimeout(timeout);
-};
 
 startBtn.addEventListener("click", demarrer);
 stopBtn.addEventListener("click", arreter);
 resetBtn.addEventListener("click", reset);
-
-</script>
-</body>
-</html>
