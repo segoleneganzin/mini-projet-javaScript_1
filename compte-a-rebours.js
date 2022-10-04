@@ -56,6 +56,18 @@ goCompteur.addEventListener('click', function compteur(element) {
     }, 10);
 });
 
+//   affichage
+if (milliSecondes < 10) {
+    milliSecondes = "0" + milliSecondes;
+}
+if (secondes < 10) {
+    secondes = "0" + secondes;
+}
+
+if (minutes < 10) {
+    minutes = "0" + minutes;
+}
+
 
 function pad(valeur) {
     let valString = valeur + "";

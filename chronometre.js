@@ -6,6 +6,7 @@ let chrono = document.getElementById("chrono"),
     minutes = 0,
     secondes = 0,
     millisecondes = 0,
+    jours = 0,
     timeout,
     estArrete = true;
 
@@ -24,59 +25,71 @@ function arreter () {
 };
 
 function reset() {
-    chrono.textContent = "00:00:00:000";
+    document.getElementById('hour').innerHTML = "00";
+    document.getElementById('minute').innerHTML = "00";
+    document.getElementById('second').innerHTML = "00";
+    document.getElementById('milliSec').innerHTML = "00";
     estArrete = true;
     heures = 0;
     minutes = 0;
     secondes = 0;
     clearTimeout(timeout);
-  };
+};
 
 function defilerTemps () {
-  if (estArrete) return;
+    //if (estArrete) return;
 
-  millisecondes = parseInt(millisecondes);
-  secondes = parseInt(secondes);
-  minutes = parseInt(minutes);
-  heures = parseInt(heures);
-
-  millisecondes++;
-
-  if (millisecondes == 100){
-    secondes++;
-    millisecondes = 0;
-  }
-
-
-  if (secondes == 60) {
-    minutes++;
-    secondes = 0;
-  }
-
-  if (minutes == 60) {
-    heures++;
-    minutes = 0;
-  }
-
-  //   affichage
-  if (millisecondes < 10) {
-    millisecondes = "00" + millisecondes;
-    }else if (millisecondes < 100) {
-        millisecondes = "0" + millisecondes;
+    millisecondes = parseInt(millisecondes);
+    secondes = parseInt(secondes);
+    minutes = parseInt(minutes);
+    heures = parseInt(heures);
+    jours = parseInt(jours);
+    function defilerMilliSec() {
+        for (let i = 0; i < 100; i++) {
+            millisecondes = i;
+        }
     }
-  if (secondes < 10) {
-    secondes = "0" + secondes;
-  }
+    defilerMilliSec();
+    if (millisecondes == 99){
+        secondes++;
+        millisecondes = 0;
+    }
+    if (secondes == 60) {
+        minutes++;
+        secondes = 0;
+    }
+    if (minutes == 60) {
+        heures++;
+        minutes = 0;
+    }
+    if (heures == 24) {
+        jours++;
+        heures = 0;
+    }
 
-  if (minutes < 10) {
-    minutes = "0" + minutes;
-  }
+    //   affichage
+    if (millisecondes < 10) {
+        millisecondes = "00" + millisecondes;
+    }
+    if (secondes < 10) {
+        secondes = "0" + secondes;
+    }
 
-  if (heures < 10) {
-    heures = "0" + heures;
-  }
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
 
-  chrono.textContent = `${heures}:${minutes}:${secondes}:${millisecondes}`;
+    if (heures < 10) {
+        heures = "0" + heures;
+    }
+    if (jours < 10) {
+        jours = "0" + jours;
+    }
+
+    document.getElementById('hour').innerHTML = jours;
+    document.getElementById('minute').innerHTML = heures;
+    document.getElementById('second').innerHTML = minutes;
+    document.getElementById('milliSec').innerHTML = secondes;
 
   timeout = setTimeout(defilerTemps, 10);
 };

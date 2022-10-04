@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "PressStart";
+    src: url("./font/PressStart2P-Regular.ttf");
+}
+body {
+    font-family: "PressStart", sans-serif;
+    box-sizing: border-box;
+}
+
+
 /*******************************Page principale**********************************/
 .home_container {
     display: flex;
@@ -6,7 +16,6 @@
 }
 .homeLink {
     text-decoration: none;
-    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 1000;
     font-size: 100px;
     color: black;
@@ -23,21 +32,22 @@
     justify-content: center;
 }
 #compte-a-rebours input {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background-color: black;
     color: white;
     font-size: 50px;
     text-align: center;
     border-radius: 10px;
     border: 5px grey solid;
-    margin-top: 35vh;
+    margin-top: 15vh;
+    font-family: "PressStart", sans-serif;
 }
 .minutes, .secondes, .milli-secondes {
     margin: 2%;
-
 }
 #goCompteur, #stopCompteur, #resetCompteur, button {
+    font-family: "PressStart", sans-serif;
     cursor: pointer;
     margin: auto;
     padding: 1%;
@@ -63,7 +73,7 @@
     font-size: 100px;
     text-align: center;
     width: 100%;
-    margin: 10% 0 10% 0;
+    margin: 5% 0 5% 0;
 }
 .button_container {
     display: flex;
