@@ -10,18 +10,18 @@ let chrono = document.getElementById("chrono"),
     timeout,
     estArrete = true;
 
-function demarrer () {
-  if (estArrete) {
-    estArrete = false;
-    defilerTemps();
-  }
+function demarrer() {
+    if (estArrete) {
+        estArrete = false;
+        defilerTemps();
+    }
 };
 
-function arreter () {
-  if (!estArrete) {
-    estArrete = true;
-    clearTimeout(timeout);
-  }
+function arreter() {
+    if (!estArrete) {
+        estArrete = true;
+        clearTimeout(timeout);
+    }
 };
 
 function reset() {
@@ -36,7 +36,7 @@ function reset() {
     clearTimeout(timeout);
 };
 
-function defilerTemps () {
+function defilerTemps() {
     //if (estArrete) return;
 
     millisecondes = parseInt(millisecondes);
@@ -50,7 +50,7 @@ function defilerTemps () {
         }
     }
     defilerMilliSec();
-    if (millisecondes == 99){
+    if (millisecondes == 99) {
         secondes++;
         millisecondes = 0;
     }
@@ -91,7 +91,7 @@ function defilerTemps () {
     document.getElementById('second').innerHTML = minutes;
     document.getElementById('milliSec').innerHTML = secondes;
 
-  timeout = setTimeout(defilerTemps, 10);
+    timeout = setTimeout(defilerTemps, 10);
 };
 
 

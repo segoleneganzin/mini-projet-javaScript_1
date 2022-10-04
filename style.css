@@ -2,6 +2,9 @@
     font-family: "PressStart";
     src: url("./font/PressStart2P-Regular.ttf");
 }
+:root {
+    --main-text-color : black;
+}
 body {
     font-family: "PressStart", sans-serif;
     box-sizing: border-box;
@@ -17,13 +20,23 @@ body {
 .homeLink {
     text-decoration: none;
     font-weight: 1000;
-    font-size: 100px;
-    color: black;
+    font-size: 4em;
+    color: var(--main-text-color);
     text-align: center;
+    margin: 2%;
 }
 .homeLink:hover {
     font-weight: 1200;
     color: pink;
+}
+/******************************lien vers homepage********************************/
+.goback {
+    font-size: 1em;
+    position: absolute;
+    right: 5%;
+    bottom: 2%;
+    text-decoration: none;
+    color: var(--main-text-color);
 }
 /*****************************compteur.html**************************/
 #compte-a-rebours {
@@ -34,7 +47,7 @@ body {
 #compte-a-rebours input {
     width: 150px;
     height: 150px;
-    background-color: black;
+    background-color: var(--main-text-color);
     color: white;
     font-size: 50px;
     text-align: center;
@@ -72,8 +85,11 @@ body {
     display: block;
     font-size: 100px;
     text-align: center;
-    width: 100%;
-    margin: 5% 0 5% 0;
+    width: 70%;
+    margin: 5% auto 5% auto;
+    background-color: grey;
+    border: 5px solid var(--main-text-color);
+    border-radius: 10px;
 }
 .button_container {
     display: flex;
