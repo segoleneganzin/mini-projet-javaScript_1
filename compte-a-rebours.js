@@ -24,26 +24,26 @@ goCompteur.addEventListener('click', function compteur(element) {
 
 
     decompte = setInterval(function diminuerTemps () {
-        let minutes = parseInt(document.getElementById("minutes").value/60, 10),
+        let minutes = parseInt(document.getElementById("minutes").value, 10),
             secondes = parseInt(document.getElementById("secondes").value % 60, 10),
-            milliSecondes = parseInt(document.getElementById("milli-secondes").value % 60, 10);
+            milliSecondes = parseInt(document.getElementById("milli-secondes").value, 10);
             document.getElementById('minutes').innerHTML = minutes;
             document.getElementById('secondes').innerHTML = secondes;
             document.getElementById('milli-secondes').innerHTML = milliSecondes;
-        if (document.getElementById('milli-secondes').value == 0) {
-            if (document.getElementById('secondes').value == 0) {
-                if (document.getElementById('minutes').value == 0) {
+        if (milliSecondes == 0) {
+            if (secondes == 0) {
+                if (minutes == 0) {
                     console.log("coucou1");
                     document.getElementById('compteur').innerHTML = "Compte à rebours terminé";
                     //alert('compte à rebours terminé');
                     clearInterval(decompte);
                     return;
-                } else if (document.getElementById('minutes').value > 0){
+                } else if (minutes > 0){
                     console.log("coucou2");
                     document.getElementById('minutes').value -= 1;
                     document.getElementById('secondes').value = 59;
                 }
-            } else if (document.getElementById('secondes').value > 0) {
+            } else if (secondes > 0) {
                 console.log("coucou3");
                 document.getElementById('secondes').value -= 1;
                 document.getElementById('milli-secondes').value = 99;
