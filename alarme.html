@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <script src="alarme.js" defer></script>
+    <title>Alarme</title>
+</head>
+<body>
+    <div id='clock_container'>
+        <h2 id='clock'></h2>
+    </div>
+    <div class="container">
+        <div id="select_alarme">
+            <label>
+                <div>
+                <select id='alarme_heures' aria-label="heures">
+                    <option value="">00</option>
+                </select>
+                </div>
+            </label>
+            <label>
+                <div>
+                <select id='alarme_minutes' aria-label="minutes">
+                    <option value="">00</option>
+                </select>
+                </div>
+            </label>
+            <label>
+                <div>
+                <select id='alarme_secondes' aria-label="secondes">
+                    <option value="">00</option>
+                </select>
+                </div>
+            </label>
+        </div>
+        <div class="button_container">
+            <input type="button" id="goCompteur" name="go" value="ACTIVATE" onClick='alarmSet()'>
+            <input type="button" id="stopCompteur" name="stop" value="STOP" onClick='alarmClear()'>
+            <input type="button" id="resetCompteur" name="reset" value="RESET" onClick='alarmClear()'>
+        </div>
+    </div>
+    <a href="index.html" class="goback">Back Home</a>
+</body>
+</html>

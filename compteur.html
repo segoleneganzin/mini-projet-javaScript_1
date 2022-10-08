@@ -12,19 +12,22 @@
     <div class="container">
         <div id="compte-a-rebours">
             <div class="minutes">
-                <input type="text" id="minutes" name="minutes" value="00" required minlength="1" maxlength="2"/>
+                <input type="text" id="minutes" name="minutes" value="00" required minlength="1" maxlength="2" title="minutes" placeholder="minutes"/>
             </div>
             <div class="secondes">
-                <input type="text" id="secondes" name="secondes" value="00" required minlength="2" maxlength="2"/>
+                <input type="text" id="secondes" name="secondes" value="00" required minlength="2" maxlength="2" title="secondes" placeholder="secondes"/>
             </div>
             <div class="milli-secondes">
-                <input type="text" id="milli-secondes" name="milli-secondes" value="000" required minlength="3" maxlength="3"/>
+                <input type="text" id="milli-secondes" name="milli-secondes" value="000" required minlength="2" maxlength="2" title="millisecondes" placeholder="millisecondes"/>
             </div>
         </div>
-        <input type="button" id="goCompteur" name="go" value="GO">
-        <input type="button" id="stopCompteur" name="stop" value="STOP">
-        <input type="button" id="resetCompteur" name="reset" value="RESET">
+        <div class="button_container">
+            <input type="button" id="goCompteur" name="go" value="GO">
+            <input type="button" id="stopCompteur" name="stop" value="STOP">
+            <input type="button" id="resetCompteur" name="reset" value="RESET">
+        </div>
         <div id="compteur"></div>
     </div>
+    <a href="index.html" class="goback">Back Home</a>
 </body>
 </html>

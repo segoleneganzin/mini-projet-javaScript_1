@@ -1,3 +1,16 @@
+@font-face {
+    font-family: "PressStart";
+    src: url("./font/PressStart2P-Regular.ttf");
+}
+:root {
+    --main-text-color : black;
+}
+body {
+    font-family: "PressStart", sans-serif;
+    box-sizing: border-box;
+}
+
+
 /*******************************Page principale**********************************/
 .home_container {
     display: flex;
@@ -6,15 +19,24 @@
 }
 .homeLink {
     text-decoration: none;
-    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 1000;
-    font-size: 100px;
-    color: black;
+    font-size: 4em;
+    color: var(--main-text-color);
     text-align: center;
+    margin: 2%;
 }
 .homeLink:hover {
     font-weight: 1200;
     color: pink;
+}
+/******************************lien vers homepage********************************/
+.goback {
+    font-size: 1em;
+    position: absolute;
+    right: 5%;
+    bottom: 2%;
+    text-decoration: none;
+    color: var(--main-text-color);
 }
 /*****************************compteur.html**************************/
 #compte-a-rebours {
@@ -23,32 +45,80 @@
     justify-content: center;
 }
 #compte-a-rebours input {
-    width: 100px;
-    height: 100px;
-    background-color: black;
+    width: 150px;
+    height: 150px;
+    background-color: var(--main-text-color);
     color: white;
     font-size: 50px;
     text-align: center;
     border-radius: 10px;
     border: 5px grey solid;
-    margin-top: 35vh;
+    margin-top: 15vh;
+    font-family: "PressStart", sans-serif;
 }
 .minutes, .secondes, .milli-secondes {
     margin: 2%;
-
 }
-#goCompteur, #stopCompteur, #resetCompteur {
+#goCompteur, #stopCompteur, #resetCompteur, button {
+    font-family: "PressStart", sans-serif;
     cursor: pointer;
     margin: auto;
     padding: 1%;
     height: 20%;
-    width: 100%;
+    width: auto;
     border: none;
     font-size: 50px;
     font-weight: 600;
     background-color: transparent;
 }
 #compteur {
+    font-size: 25px;
+    text-align: center;
+}
+
+/********************************chronometre.html******************************/
+.chrono_container {
+    display: flex;
+    flex-direction: column;
+}
+#chrono {
+    display: block;
+    font-size: 100px;
+    text-align: center;
+    width: 70%;
+    margin: 5% auto 5% auto;
+    background-color: grey;
+    border: 5px solid var(--main-text-color);
+    border-radius: 10px;
+}
+.button_container {
+    display: flex;
+    flex-direction: column;
+}
+
+/*******************************************alarme.html**************************************/
+#clock_container {
+    display: block;
+    text-align: center;
+    font-size: 50px;
+    margin: 10% 0 10% 0;
+}
+#select_alarme {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 2px solid var(--main-text-color);
+    border-radius: 10px;
+    width: 15%;
+    height: auto;
+    margin: 0 auto 5% auto;
+    padding: 2%;
+}
+#select_alarme input {
+    border: none;
+    width: 25%;
+    height: auto;
+    margin: 8%;
     font-size: 25px;
     text-align: center;
 }
